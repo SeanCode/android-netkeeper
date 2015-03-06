@@ -32,6 +32,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -354,6 +355,7 @@ public class SucessActivity extends BaseActivity {
                 switch (which) {
                     case CategoryFormatCommand.FULL_CLASS_NAME_SPECIFIER:
                         SucessActivity.this.finish();
+                        break;
                     default:
                         break;
                 }
@@ -474,7 +476,7 @@ public class SucessActivity extends BaseActivity {
         Intent loginIntent = getIntent();
         loginTime = loginIntent.getLongExtra("loginTime", loginTime);
         this.authFlag = loginIntent.getBooleanExtra("authFlag", false);
-        requestWindowFeature(COUNT_DOWN_RECORD);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.logger.debug(
                 new StringBuilder("onCreate ====step3======getUsername==").append(getUsername())
                         .append("==authFlag==")
