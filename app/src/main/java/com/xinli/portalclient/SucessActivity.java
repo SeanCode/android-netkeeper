@@ -161,7 +161,7 @@ public class SucessActivity extends BaseActivity {
                 }
                 SucessActivity.this.logger.debug(
                         new StringBuilder("==verifyURL==").append(SucessActivity.this.verifyURL).toString());
-                if ("".equals(SucessActivity.this.verifyURL) || SucessActivity.this.verifyURL == "") {
+                if ("".equals(SucessActivity.this.verifyURL) || SucessActivity.this.verifyURL.equals("")) {
                     SucessActivity.this.logger.debug("==verifyURLAAA==");
                     SucessActivity.this.client.send(Config.VERIFYCODE_AUTH_URL, Config.VERIFYCODE_AUTH_SORT,
                             requestXML.getBytes());
@@ -794,7 +794,7 @@ public class SucessActivity extends BaseActivity {
 //        });
 //        builder.setNegativeButton("取消", null);
 //        builder.show();
-        Log.d(TAG,"exitApp");
+        Log.d(TAG, "exitApp");
     }
 
     public String getRealUrl() {
@@ -852,7 +852,7 @@ public class SucessActivity extends BaseActivity {
                 this.strResultInfo[0] = "0";
                 this.strResultInfo[1] = "解析结果信息失败";
             } catch (Throwable th) {
-                Log.e(TAG,th.getMessage());
+                Log.e(TAG, th.getMessage());
             }
         }
         return this.strResultInfo;
